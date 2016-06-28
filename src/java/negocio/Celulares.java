@@ -88,10 +88,12 @@ public class Celulares {
     }
     
     public void eliminar(){
-        con.setInsertar("update celulares set estado='pasivo' where celular_id='"+this.getCelular_id()+"'");
+        con.setInsertar("update celulares set estado='pasivo' where celular_id='"+this.getCelular_id()+"';");
     }
     
     public void actualizar(){
         con.setInsertar("update celulares set tipo_chip='"+this.getChip()+"', fecha_creacion='"+this.getFecha_creacion()+"', numero='"+this.getNumero()+"', sistema_id='"+this.getSistema_id()+"', modelo_id='"+this.getModelo_id()+"' where celular_id='"+this.getCelular_id()+"' ");
     }
 }
+
+//

@@ -46,7 +46,7 @@
                     %>
                     
                 </tbody>
-
+                    <a class="btn btn-success pull-right" href="/Prueba_final/marcas/index.jsp">Generar reporte</a>
             </table>      
         </div>
 

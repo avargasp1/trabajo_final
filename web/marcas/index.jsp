@@ -37,7 +37,7 @@
                             out.println("<tr>");
                             out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
                             out.println("<td>"+con.getResult().getString("nombre")+"</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/LenguajeServ?eliminar=" + con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/MarcaServ?eliminar=" + con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/marcas/editar.jsp?marca_id=" + con.getResult().getString("marca_id") + "'>Editar</a>" + "</td>");
                             out.println("</tr>");
                         }

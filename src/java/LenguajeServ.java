@@ -42,6 +42,27 @@ public class LenguajeServ extends HttpServlet {
                 
                 response.sendRedirect("/Prueba_final/lenguajes_programacion/index.jsp");
             }
+            if (request.getParameter("crear") != null){
+                String nombre = request.getParameter("nombre");
+                String fecha = request.getParameter("fecha_creacion");
+                
+                lenguaje.setNombre(nombre);
+                lenguaje.setFecha_creacion(fecha);
+                lenguaje.crear();
+                
+                response.sendRedirect("/Prueba_final/lenguajes_programacion/index.jsp");
+       
+            } if (request.getParameter("editar") != null){
+                int id = Integer.parseInt(request.getParameter("lenguaje_id"));
+                String nombre = request.getParameter("nombre");
+                String fecha = request.getParameter("fecha_creacion");
+                
+                lenguaje.setLenguaje_id(id);
+                lenguaje.setNombre(nombre);
+                lenguaje.setFecha_creacion(fecha);
+                lenguaje.actualizar();
+            }
+            
         }
     }
 

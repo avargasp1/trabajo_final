@@ -17,7 +17,7 @@
     <body>
         <div class="container">
             <h1>Crea</h1>
-            <h3>Lenguaje de programacion</h3>
+            <h3>Marca</h3>
 
             <form class=" form-horizontal ">
                 <div class="form-group">

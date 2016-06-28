@@ -38,7 +38,11 @@ public class login extends HttpServlet {
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
             
-           
+            con.setConsulta("select nombre from usuarios");
+            con.getResult();
+            con.setConsulta("select clave form usuarios");
+            
+            
             
         }
     }

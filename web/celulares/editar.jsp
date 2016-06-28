@@ -44,13 +44,13 @@
                     <label for="exampleInputName2">Numero</label>
                     <input type="text" class="form-control" name="numero" value="<% out.println(con.getResult().getString("numero")); %>">
                     <label for="exampleInputName2">Sistema Operativo</label>
-                    <select class="form-control" name="sistema_operativo">
+                    <select class="form-control" name="sistema_operativo" id="sis_operativo">
                         <option value="">hola hola</option>
                         <%%>
                     </select>
 
                     <label for="exampleInputName2">Modelo</label>
-                    <select class="form-control" name="modelo" >
+                    <select class="form-control" name="modelo" id="modelo" >
                         <option value="">hola hola</option>
                         <% }%>
                     </select>

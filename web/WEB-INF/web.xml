@@ -16,6 +16,18 @@
         <servlet-name>LenguajeServ</servlet-name>
         <servlet-class>LenguajeServ</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SistemaServ</servlet-name>
+        <servlet-class>SistemaServ</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModeloServ</servlet-name>
+        <servlet-class>ModeloServ</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MarcaServ</servlet-name>
+        <servlet-class>MarcaServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CelularServ</servlet-name>
         <url-pattern>/CelularServ</url-pattern>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>LenguajeServ</servlet-name>
         <url-pattern>/LenguajeServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SistemaServ</servlet-name>
+        <url-pattern>/SistemaServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModeloServ</servlet-name>
+        <url-pattern>/ModeloServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MarcaServ</servlet-name>
+        <url-pattern>/MarcaServ</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

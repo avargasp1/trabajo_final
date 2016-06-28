@@ -17,7 +17,7 @@ public class Marcas {
     String estado;
     String creado_por;
     
-    Conexion con;
+    Conexion con = new Conexion();
 
     public int getMarca_id() {
         return marca_id;
@@ -51,7 +51,17 @@ public class Marcas {
         this.creado_por = creado_por;
     }
     
+    //Metodos de modificacion de tabla
+    public void crear(){
+        con.setInsertar("insert into marcas(nombre, estado, creado_por) values ('"+this.getNombre()+"','activo','"+this.getCreado_por()+"' ) ");
+    }
     
+    public void eliminar(){
+        con.setInsertar("update marcas set estado='pasivo' where marca_id='"+this.getMarca_id()+"'");
+    }
+    
+    public void actualizar(){
+    }
     
     
 }
