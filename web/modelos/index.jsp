@@ -4,6 +4,7 @@
     Author     : alejandrovargas
 --%>
 
+<%@page import="conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,20 +15,35 @@
     </head>
     <body>
         <div class="container">
-            <h1>Celulares</h1>
+            <h1>Marca</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/sistemas_operativos/crear.jsp" role="button">Crear Sistema Operativo</a>
+            <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Lenguaje</a>
+            <div class="pull-right">
+                <label>Buscar</label>
+                <input type="text" name="buscar">
+            </div>
             <br>
             <table class="table table-striped">
                 <thead>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Fecha de creacion</th>
-                    <th>Numero</th>
-                    <th>Lenguaje de programacion</th>
+                    <th>Marca</th>
+
                 </thead>
                 <tbody>
-                    
+                    <%
+                        Conexion con = new Conexion();
+                        con.setConsulta("select * from modelos where estado='activo'");
+                       while (con.getResult().next()){
+                            out.println("<tr>");
+                            out.println("<td>"+con.getResult().getString("modelo_id")+"</td>");
+                            out.println("<td>"+con.getResult().getString("nombre")+"</td>");
+                            out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/LenguajeServ?eliminar=" + con.getResult().getString("modelo_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/modelos/editar.jsp?modelo_id=" + con.getResult().getString("modelo_id") + "'>Editar</a>" + "</td>");
+                            out.println("</tr>");
+                        }
+                    %>
                     
                 </tbody>
 

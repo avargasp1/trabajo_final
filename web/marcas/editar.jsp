@@ -4,6 +4,7 @@
     Author     : alejandrovargas
 --%>
 
+<%@page import="conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,22 +16,27 @@
         <script type="text/javascript" src="../template/calendar/tcal.js"></script>
     </head>
     <body>
+        <%
+            Conexion con = new Conexion ();
+            String marca_id = request.getParameter("marca_id");
+                con.setConsulta("select * from marcas where marca_id='"+marca_id+"'");
+                while(con.getResult().next()){
+        %>
         <div class="container">
             <h1>Editar</h1>
             <h3>Lenguaje de Programacion</h3>
             <div class="form-horizontal">
                 <label>ID</label>
-                <input type="text" class="form-control" readonly value="">
+                <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("marca_id")); %>">
             </div>
             <form class=" form-horizontal ">
                 <div class="form-group">
 
 
                     <label for="exampleInputName2">Nombre</label>
-                    <input type="text" class="form-control" name="nombre"  value="">
+                    <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
-                    <label for="exampleInputName2">Fecha de Creacion</label>
-                    <input type="text" class="form-control tcal" name="fecha_creacion"  value="">
+                    
 
 
                 </div>
@@ -38,7 +44,7 @@
                     <label>creado por:</label>
                     <input type="text" class="form-control" readonly value="">
                 </div>    
-                <br>
+                <br><% } %>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>
             </form>          
         </div><!--container -->

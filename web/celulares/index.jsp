@@ -19,7 +19,8 @@
             <h1>Celulares</h1>
             <br>
             <a class="btn btn-success" href="/Prueba_final/celulares/crear.jsp" role="button">Crear celular</a>
-            <a class="btn btn-success" href="/Prueba_final/celulares/crear.jsp" role="button">Crear Modelo</a>
+            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/modelos/index.jsp">Modelo</a><br><br>
+            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/marcas/index.jsp">Marca</a><br><br>
             
             <div class="pull-right">
                 <label> Buscar</label>

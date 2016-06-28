@@ -42,7 +42,7 @@ public class CelularServ extends HttpServlet {
             
             
               
-           } /*if(request.getParameter("crear")!=null){
+           }/* if(request.getParameter("crear")!=null){
                 String chip =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha_creacion");
                 int numero = Integer.parseInt(request.getParameter("numero"));

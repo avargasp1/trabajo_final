@@ -17,21 +17,15 @@
     <body>
         <div class="container">
             <h1>Crea</h1>
-            <h3>Modelo</h3>
+            <h3>Lenguaje de programacion</h3>
 
             <form class=" form-horizontal ">
                 <div class="form-group">
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
 
-                    <label for="exampleInputName2">Marca</label>
+                    <label for="exampleInputName2">Fecha de Creacion</label>
                     <input type="text" class="form-control tcal" name="fecha_creacion">
-
-                    <label for="exampleInputName2">Programado en:</label>
-                    <select class="form-control" name="lenguaje_id">
-                        <option value="">hola hola</option>
-                        <%%>
-                    </select>
 
                 </div>
                 <div class="form-horizontal">
@@ -39,7 +33,7 @@
                     <input type="text" class="form-control" readonly value="">
                 </div>    
                 <br>
-                <button type="submit" class="btn btn-success pull-right">Crear</button>
+                <button type="submit" class="btn btn-success pull-right" name="crear" value="1">Crear</button>
             </form>          
         </div><!--container -->
     </body>

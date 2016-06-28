@@ -4,6 +4,7 @@
     Author     : alejandrovargas
 --%>
 
+<%@page import="conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,11 +27,21 @@
                 <thead>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Fecha de creacion</th>
-                    
+
                 </thead>
                 <tbody>
-                    
+                    <%
+                        Conexion con = new Conexion();
+                        con.setConsulta("select * from marcas where estado='activo'");
+                       while (con.getResult().next()){
+                            out.println("<tr>");
+                            out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
+                            out.println("<td>"+con.getResult().getString("nombre")+"</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/LenguajeServ?eliminar=" + con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/marcas/editar.jsp?marca_id=" + con.getResult().getString("marca_id") + "'>Editar</a>" + "</td>");
+                            out.println("</tr>");
+                        }
+                    %>
                     
                 </tbody>
 

@@ -4,6 +4,7 @@
     Author     : alejandrovargas
 --%>
 
+<%@page import="conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,27 +16,33 @@
         <script type="text/javascript" src="../template/calendar/tcal.js"></script>
     </head>
     <body>
+         <%
+            Conexion con = new Conexion ();
+            String sistema_id = request.getParameter("sistema_id");
+                con.setConsulta("select * from sistemas_operativos where sistema_id='"+sistema_id+"'");
+                while(con.getResult().next()){
+        %>
         <div class="container">
             <h1>Editar</h1>
             <h3>Celulares</h3>
             <div class="form-horizontal">
                 <label>ID</label>
-                <input type="text" class="form-control" readonly value="">
+                <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("sistema_id")); %>">
             </div>
             <form class=" form-horizontal ">
                 <div class="form-group">
 
 
                     <label for="exampleInputName2">Nombre</label>
-                    <input type="text" class="form-control" name="nombre"  value="">
+                    <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
                     <label for="exampleInputName2">Fecha de Creacion</label>
-                    <input type="text" class="form-control tcal" name="fecha_creacion"  value="">
+                    <input type="text" class="form-control tcal" name="fecha_creacion"  value="<% out.println(con.getResult().getString("fecha_creacion")); %>">
                     
                     <label for="exampleInputName2">Programado en:</label>
                     <select class="form-control" name="lenguaje_id">
                         <option value="">hola hola</option>
-                        <%%>
+                        <%}%>
                     </select>
 
                 </div>

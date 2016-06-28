@@ -37,7 +37,7 @@
                             out.println("<td>"+con.getResult().getString("fecha_creacion")+"</td>");
                             out.println("<td>"+con.getResult().getString("lenguaje_id")+"</td>");
                             out.println("<td>" + "<a href='/Prueba_final/SistemaServ?eliminar=" + con.getResult().getString("sistema_id") + "'>Eliminar</a>" + "</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/Sistema_operativo/editar.jsp?sistema_id=" + con.getResult().getString("sistema_id") + "'>Editar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/Sistemas_operativos/editar.jsp?sistema_id=" + con.getResult().getString("sistema_id") + "'>Editar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>
