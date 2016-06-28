@@ -10,13 +10,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import negocio.Celulares;
+import negocio.LenguajeProgramacion;
 
 /**
  *
  * @author alejandrovargas
  */
-public class CelularServ extends HttpServlet {
+public class LenguajeServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,53 +31,17 @@ public class CelularServ extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             
-            Celulares celu = new Celulares();
+            LenguajeProgramacion lenguaje = new LenguajeProgramacion ();
             
-            if(request.getParameter("eliminar")!= null){
+            if (request.getParameter("eliminar") != null){
+                int id = Integer.parseInt(request.getParameter("eliminar"));
+                lenguaje.setLenguaje_id(id);
+                lenguaje.eliminar();
                 
-                int id=Integer.parseInt(request.getParameter("eliminar"));
-                celu.setCelular_id(id);
-                celu.eliminar();
-                response.sendRedirect("/Prueba_final/celulares/index.jsp");
-              
-           }/* if(request.getParameter("crear")!=null){
-                String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha_creacion");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                String creador = request.getParameter("creador");
-                int modelo_id = Integer.parseInt(request.getParameter("modelo_id"));
-                
-                celu.setChip(chip);
-                celu.setFecha_creacion(fecha_creacion);
-                celu.setNumero(numero);
-                celu.setSistema_id(sistema_id);
-                celu.setCreado_por(creador);
-                celu.setModelo_id(modelo_id);
-                celu.crear();
-                
-                response.sendRedirect("/Prueba3/celular/index.jsp");
-              
-           }if(request.getParameter("editar") != null){
-                int celular_id = Integer.parseInt(request.getParameter("celular_id"));
-                String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                String creador = request.getParameter("creador");
-               
-                celu.setTipoChip(chip);
-                celu.setFecha_creacion(fecha_creacion);
-                celu.setNumero(numero);
-                celu.setSistema_id(sistema_id);
-                celu.setCreador(creador);
-                celu.setCelular_id(celular_id);
-                celu.update();
-                
-                response.sendRedirect("/Prueba3/celular/index.jsp");
-            */
-                 
+                response.sendRedirect("/Prueba_final/lenguajes_programacion/index.jsp");
+            }
         }
     }
 

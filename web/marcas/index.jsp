@@ -17,7 +17,7 @@
         <div class="container">
             <h1>Marca</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Lenguaje</a>
+            <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Marca</a>
             <div class="pull-right">
                 <label>Buscar</label>
                 <input type="text" name="buscar">

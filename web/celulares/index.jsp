@@ -18,9 +18,10 @@
         <div class="container">
             <h1>Celulares</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/celulares/crear.jsp" role="button">Crear celular</a>
-            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/modelos/index.jsp">Modelo</a><br><br>
-            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/marcas/index.jsp">Marca</a><br><br>
+            <label>Crear:</label>
+            <a class="btn btn-success" href="/Prueba_final/celulares/crear.jsp" role="button">celular</a>
+            <a class="btn btn-success" href="/Prueba_final/modelos/index.jsp">Modelo</a>
+            <a class="btn btn-success" href="/Prueba_final/marcas/index.jsp">Marca</a>
             
             <div class="pull-right">
                 <label> Buscar</label>
@@ -28,7 +29,7 @@
                 <input type="submit" class="btn btn-success" name="buscar">
                 <%
                 Conexion con = new Conexion();
-                /*
+                
                 if (request.getParameter("buscar") != null) {
                     if (request.getParameter("buscar").isEmpty()) {
 
@@ -39,7 +40,7 @@
                     }
                 } else {
                     con.setConsulta("select * from celulares where estado='activo'");
-                }*/
+                }
             %>
             </div>
             
@@ -56,7 +57,7 @@
                 </thead>
                 <tbody>
                     <%
-                        con.setConsulta("select * from celulares where estado='activo'");
+                        
                        while (con.getResult().next()){
                             out.println("<tr>");
                             out.println("<td>"+con.getResult().getString("celular_id")+"</td>");
