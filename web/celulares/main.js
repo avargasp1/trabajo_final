@@ -11,23 +11,13 @@ $.getJSON("/Prueba_final/Api?modulo=modelo", function (data) {
         $("#modelo").append("<option value='" + d.modelo_id + "'>" + d.nombre + "</option>");
     });
 });
-$("#modelo").change(function () {
-    var id_modelo = $("#modelo").val();
-    
-    $.getJSON("/Prueba_final/Api?modulo=tarea&id_modelo=" + id_modelo, function (data) {
 
-        $.each(data, function (i, d) {
-            //$("#marcas").empty().append('whatever');
-            $("#marcas").append("<option value='" + d.marca_id + "'>" + d.nombre + "</option>");
-        });
+$.getJSON("/Prueba_final/Api?modulo=marca", function (data) {
+    $.each(data, function (i, d) {
+        //$("#marcas").empty()
+        $("#marcas").append("<option value='" + d.marca_id + "'>" + d.nombre + "</option>");
     });
 });
-
-
-
-
-
-
 
 $.getJSON("/Prueba_final/Api?modulo=lenguaje", function (data) {
     $.each(data, function (i, d) {

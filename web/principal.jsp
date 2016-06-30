@@ -28,11 +28,12 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Celulares</a></li>
-                        <li><a href="#about">Sistemas Operativos</a></li>
-                        <li><a href="#contact">Lenguajes de Programacion</a></li>
-                        <li><a href="#contact">Sistemas Operativos</a></li>
-
+                        <ul class="nav navbar-nav">
+                        <li><a href="celulares/index.jsp">Celulares</a></li>
+                        <li><a href="Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
+                        <li><a href="lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
+                        <li><a href="index.jsp" class="pull-right">Log Out</a></li>
+                    </ul>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

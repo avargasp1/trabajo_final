@@ -45,7 +45,7 @@
                     </select>
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo">
-                        <option>hola hola</option>
+                        <option>elija una opcion...</option>
                         <%%>
                     </select>
                 </div>
