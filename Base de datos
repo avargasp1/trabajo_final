@@ -1,0 +1,58 @@
+# trabajo_final
+CREATE TABLE `celulares` (
+  `celular_id` int(10) NOT NULL AUTO_INCREMENT,
+  `tipo_chip` varchar(25) DEFAULT '',
+  `fecha_creacion` date DEFAULT NULL,
+  `numero` int(10) DEFAULT NULL,
+  `sistema_id` int(10) DEFAULT NULL,
+  `estado` varchar(10) DEFAULT 'activo',
+  `modelo_id` int(10) DEFAULT NULL,
+  `creado_por` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`celular_id`),
+  KEY `sistema_id` (`sistema_id`),
+  KEY `modelo_id` (`modelo_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `lenguajes_programacion` (
+  `lenguaje_id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(25) DEFAULT NULL,
+  `fecha_creacion` date DEFAULT NULL,
+  `estado` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`lenguaje_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `marcas` (
+  `marca_id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(25) DEFAULT NULL,
+  `estado` varchar(25) DEFAULT 'activo',
+  `creado_por` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`marca_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `modelos` (
+  `modelo_id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(25) DEFAULT NULL,
+  `estado` varchar(25) DEFAULT 'activo',
+  `creado_por` varchar(25) DEFAULT NULL,
+  `marca_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`modelo_id`),
+  KEY `marca_id` (`marca_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `sistemas_operativos` (
+  `sistema_id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(25) DEFAULT NULL,
+  `fecha_creacion` date DEFAULT NULL,
+  `estado` varchar(25) DEFAULT NULL,
+  `lenguaje_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`sistema_id`),
+  KEY `lenguaje_id` (`lenguaje_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `Usuarios` (
+  `usuario_id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(25) DEFAULT NULL,
+  `clave` varchar(25) DEFAULT NULL,
+  `estado` varchar(25) DEFAULT 'activo',
+  PRIMARY KEY (`usuario_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
