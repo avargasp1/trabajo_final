@@ -70,8 +70,6 @@
                 </thead>
                 <tbody>
                     <%
-                        
-                        
                        while (con.getResult().next()){
                             out.println("<tr>");
                             out.println("<td>"+con.getResult().getString("sistema_id")+"</td>");
