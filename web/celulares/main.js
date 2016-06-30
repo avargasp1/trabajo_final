@@ -13,7 +13,7 @@ $.getJSON("/Prueba_final/Api?modulo=modelo", function (data) {
 });
 $("#modelo").change(function () {
     var id_modelo = $("#modelo").val();
-    console.log();
+    
     $.getJSON("/Prueba_final/Api?modulo=tarea&id_modelo=" + id_modelo, function (data) {
 
         $.each(data, function (i, d) {
