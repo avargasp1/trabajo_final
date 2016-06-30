@@ -42,6 +42,25 @@
             <br>
             <a class="btn btn-success" href="/Prueba_final/Sistemas_operativos/crear.jsp" role="button">Crear Sistema Operativo</a>
             <br>
+            <div class="pull-right">
+                <label> Buscar</label>
+                <input type="text" name="buscar">
+                <input type="submit" class="btn btn-success" name="buscar">
+                <%
+                Conexion con = new Conexion();
+                
+                if (request.getParameter("buscar") != null) {
+                    if (request.getParameter("buscar").isEmpty()) {
+
+                        con.setConsulta("select * from sistemas_operativos where estado='activo'");
+                    } else {
+                        int nombre = Integer.parseInt(request.getParameter("buscar"));
+                        con.setConsulta("select * from sistemas_operativos where nombre = '" + nombre + "' and estado='activo'");
+                    }
+                } else {
+                    con.setConsulta("select * from sistemas_operativos where estado='activo'");                }
+            %>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <th>ID</th>
@@ -51,8 +70,8 @@
                 </thead>
                 <tbody>
                     <%
-                        Conexion con = new Conexion();
-                        con.setConsulta("select * from sistemas_operativos where estado='activo'");
+                        
+                        
                        while (con.getResult().next()){
                             out.println("<tr>");
                             out.println("<td>"+con.getResult().getString("sistema_id")+"</td>");
