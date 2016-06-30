@@ -30,7 +30,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#">Celulares</a></li>
                         <li><a href="#about">Sistemas Operativos</a></li>
-                        <li><a href="#contact">Lenguajes de Pregramacion</a></li>
+                        <li><a href="#contact">Lenguajes de Programacion</a></li>
                         <li><a href="#contact">Sistemas Operativos</a></li>
 
                     </ul>

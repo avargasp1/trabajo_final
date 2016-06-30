@@ -35,7 +35,7 @@ public class SistemaServ extends HttpServlet {
             SistemaOperativo so = new SistemaOperativo ( );
             
             if (request.getParameter("eliminar") != null ){
-                int id = Integer.parseInt(request.getParameter("sistema_id"));
+                int id = Integer.parseInt(request.getParameter("eliminar"));
                 so.setSistema_id(id);
                 so.eliminar();
                 
@@ -43,6 +43,8 @@ public class SistemaServ extends HttpServlet {
                 
             }
             if (request.getParameter("crear") != null ){
+                
+                
                 String nombre = request.getParameter("nombre");
                 String fecha = request.getParameter("fecha_creacion");
                 int lenguaje_id = Integer.parseInt(request.getParameter("lenguaje_id"));
@@ -50,6 +52,7 @@ public class SistemaServ extends HttpServlet {
                 so.setNombre(nombre);
                 so.setFecha_creacion(fecha);
                 so.setLenguaje_id(lenguaje_id);
+                
                 so.crear();
                 
                 response.sendRedirect("/Prueba_final/Sistemas_operativos/index.jsp");
@@ -57,10 +60,11 @@ public class SistemaServ extends HttpServlet {
             
             if (request.getParameter("editar") != null ){
                 
-                int id = Integer.parseInt(request.getParameter("sistema_id"));
+                int id = Integer.parseInt(request.getParameter("editar"));
                 String nombre = request.getParameter("nombre");
                 String fecha = request.getParameter("fecha_creacion");
                 int lenguaje_id = Integer.parseInt(request.getParameter("lenguaje_id"));
+                
                 
                 so.setSistema_id(id);
                 so.setNombre(nombre);

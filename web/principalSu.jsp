@@ -28,11 +28,10 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Celulares</a></li>
-                        <li><a href="#about">Sistemas Operativos</a></li>
-                        <li><a href="#contact">Lenguajes de Pregramacion</a></li>
-                        <li><a href="#contact">Sistemas Operativos</a></li>
-
+                        <li><a href="celulares/index.jsp">Celulares</a></li>
+                        <li><a href="Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
+                        <li><a href="lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
+                        <li><a href="index.jsp" class="pull-right">Log Out</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -43,8 +42,8 @@
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/celulares/index.jsp">Celular</a> <br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/Sistemas_operativos/index.jsp">Sistemas operativos</a><br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Progamacion</a><br><br>
-            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/modelos/index.jsp">Modelo</a><br><br>
-            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/marcas/index.jsp">Marca</a><br><br>
+            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/usuario/index.jsp">Usuarios</a><br><br>
+            
             <!--<a class="btn btn-primary" href=""></a>-->
         </div>
         <br><br><br>

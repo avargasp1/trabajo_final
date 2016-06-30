@@ -18,33 +18,29 @@
     <body>
         <%
             Conexion con = new Conexion();
-            String lenguaje_id = request.getParameter("lenguaje_id");
-            con.setConsulta("select * from lenguajes_programacion where lenguaje_id='" + lenguaje_id + "'");
+            String usuario_id = request.getParameter("usuario_id");
+            con.setConsulta("select * from usuarios where usuario_id='" + usuario_id + "'");
             while (con.getResult().next()) {
         %>
         <div class="container">
             <h1>Editar</h1>
-            <h3>Lenguaje de Programacion</h3>
-            <div class="form-horizontal">
+            <h3>Usuario</h3>
 
-            </div>
-            <form class=" form-horizontal" method="post" action="/Prueba_final/LenguajeServ?crear=<% out.println(con.getResult().getString("lenguaje_id")); %>">
+            <form class=" form-horizontal "  method="post" action="/Prueba_final/UsuarioServ?editar=<% out.println(con.getResult().getString("usuario_id")); %>">
                 <div class="form-group">
-                    <label>ID</label>
-                    <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("lenguaje_id")); %>">
 
+                    <div class="form-horizontal">
+                        <label>ID</label>
+                        <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("usuario_id")); %>">
+                    </div>
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
-                    <label for="exampleInputName2">Fecha de Creacion</label>
-                    <input type="text" class="form-control tcal" name="fecha_creacion"  value="<% out.println(con.getResult().getString("fecha_creacion")); %>">
-
+                    <label for="exampleInputName2">clave</label>
+                    <input type="text" class="form-control" name="clave"  value="<% out.println(con.getResult().getString("clave")); %>">
 
                 </div>
-                <div class="form-horizontal">
-                    <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="">
-                </div>    
+
                 <br><% }%>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>
             </form>          

@@ -53,7 +53,7 @@ public class LenguajeServ extends HttpServlet {
                 response.sendRedirect("/Prueba_final/lenguajes_programacion/index.jsp");
        
             } if (request.getParameter("editar") != null){
-                int id = Integer.parseInt(request.getParameter("lenguaje_id"));
+                int id = Integer.parseInt(request.getParameter("editar"));
                 String nombre = request.getParameter("nombre");
                 String fecha = request.getParameter("fecha_creacion");
                 

@@ -65,7 +65,7 @@ public class SistemaOperativo {
 
     public void eliminar() {
         con = new Conexion();
-        con.setInsertar("update sistemas_operativos set estado= pasivo where sistema_id='"+this.getSistema_id()+"'");
+        con.setInsertar("update sistemas_operativos set estado='pasivo' where sistema_id="+this.getSistema_id());
     }
 
     public void actualizar() {

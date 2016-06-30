@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import negocio.SistemaOperativo;
 import java.sql.ResultSet;
 import java.util.Arrays;
+import negocio.LenguajeProgramacion;
 import negocio.Marcas;
 import negocio.Modelos;
 
@@ -100,6 +101,26 @@ public class Api extends HttpServlet {
                         mode.setCreado_por(con.getResult().getString("creado_por"));
                         mode.setMarca_id(con.getResult().getInt("marca_id"));
                         lista.add(mode);
+                      
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Api.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+            if (request.getParameter("modulo").equals("lenguaje")){
+                con.setConsulta("select * from lenguajes_programacion");
+                
+                try {
+                    while (con.getResult().next()){
+                        LenguajeProgramacion lenguaje = new LenguajeProgramacion ();
+                                                
+                        lenguaje.setLenguaje_id(con.getResult().getInt("lenguaje_id"));
+                        lenguaje.setNombre(con.getResult().getString("nombre"));
+                        lenguaje.setFecha_creacion(con.getResult().getString("fecha_creacion"));
+                        lenguaje.setEstado(con.getResult().getString("estado"));
+                        
+                        lista.add(lenguaje);
                       
                     }
                 } catch (SQLException ex) {

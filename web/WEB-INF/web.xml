@@ -28,6 +28,10 @@
         <servlet-name>MarcaServ</servlet-name>
         <servlet-class>MarcaServ</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioServ</servlet-name>
+        <servlet-class>UsuarioServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CelularServ</servlet-name>
         <url-pattern>/CelularServ</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>MarcaServ</servlet-name>
         <url-pattern>/MarcaServ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServ</servlet-name>
+        <url-pattern>/UsuarioServ</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

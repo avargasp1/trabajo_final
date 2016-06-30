@@ -10,13 +10,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import negocio.Marcas;
+import negocio.Usuario;
 
 /**
  *
  * @author alejandrovargas
  */
-public class MarcaServ extends HttpServlet {
+public class UsuarioServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,18 +31,45 @@ public class MarcaServ extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            Marcas marca = new Marcas();
-            
-            if (request.getParameter("eliminar") !=  null){
-                int id = Integer.parseInt(request.getParameter("eliminar"));
-                out.println(id);
-                marca.setMarca_id(id);
-                marca.eliminar();
+            /* TODO output your page here. You may use following sample code. */
+            Usuario user = new Usuario();
                 
-                response.sendRedirect("/Prueba_final/marcas/index.jsp");
+            if (request.getParameter("eliminar") != null){
+                int id = Integer.parseInt(request.getParameter("eliminar"));
+                user.setUsuario_id(id);
+                user.eliminar();
+                
+                response.sendRedirect("/Prueba_final/usuarios/index.jsp");
             }
             
+             if (request.getParameter("crear") != null){
+                
+                String nombre = request.getParameter("nombre");
+                String clave = request.getParameter("clave");
+                
+                user.setNombre(nombre);
+                user.setClave(clave);
+                
+                user.crear();
+                
+                response.sendRedirect("/Prueba_final/usuarios/index.jsp");
+            }
+             
+            if (request.getParameter("editar") != null){
+                
+                String nombre = request.getParameter("nombre");
+                String clave = request.getParameter("clave");
+                int id = Integer.parseInt(request.getParameter("editar"));
+                
+                
+                user.setUsuario_id(id);
+                user.setNombre(nombre);
+                user.setClave(clave);
+                
+                user.actualizar();
+                
+                response.sendRedirect("/Prueba_final/usuarios/index.jsp");
+            }
         }
     }
 

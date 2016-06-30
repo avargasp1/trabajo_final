@@ -17,7 +17,7 @@
         <div class="container">
             <h1>Celulares</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/sistemas_operativos/crear.jsp" role="button">Crear Sistema Operativo</a>
+            <a class="btn btn-success" href="/Prueba_final/Sistemas_operativos/crear.jsp" role="button">Crear Sistema Operativo</a>
             <br>
             <table class="table table-striped">
                 <thead>

@@ -59,16 +59,16 @@ public class Modelos {
     //Metodos de modificacion de tabla
     public void crear() {
         con = new Conexion();
-        con.setConsulta("");
+        con.setConsulta("insert into modelos (nombre, marca_id,creado_por ,estado) values ('"+this.getNombre()+"','"+this.getMarca_id() +"','"+this.getCreado_por()+"' ,'activo')");
     }
 
     public void eliminar() {
         con = new Conexion();
-        con.setConsulta("");
+        con.setConsulta("update modelos set estado='pasivo' where modelo_id=" + this.getModelo_id());
     }
 
     public void actualizar() {
         con = new Conexion();
-        con.setConsulta("");
+        con.setConsulta("update modelos set nombre='"+this.getNombre()+"', marca_id='"+this.getMarca_id()+"' marca_id where modelo_id='" + this.getModelo_id()+ "'");
     }
 }

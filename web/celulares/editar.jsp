@@ -25,11 +25,12 @@
         <div class="container">
             <h1>Editar</h1>
             <h3>Celulares</h3>
-            <div class="form-horizontal">
-                <label>ID</label>
-                <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("celular_id")); %>">
-            </div>
-            <form class=" form-horizontal ">
+            <form class=" form-horizontal" method="post" action="/Prueba_final/CelularServ?editar=1">
+                <div class="form-horizontal">
+                    <label>ID</label>
+                    <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("celular_id")); %>">
+                </div>
+            
                 <div class="form-group">
                     <label for="exampleInputName2">Chip</label>
                     <select class="form-control" name="chip">
@@ -45,13 +46,13 @@
                     <input type="text" class="form-control" name="numero" value="<% out.println(con.getResult().getString("numero")); %>">
                     <label for="exampleInputName2">Sistema Operativo</label>
                     <select class="form-control" name="sistema_operativo" id="sis_operativo">
-                        <option value="">hola hola</option>
+                        <option value="">Elija una opcion...</option>
                         <%%>
                     </select>
 
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo" >
-                        <option value="">hola hola</option>
+                        <option value="">Elija una opcion...</option>
                         <% }%>
                     </select>
                 </div>
@@ -60,11 +61,12 @@
                     <input type="text" class="form-control" readonly value="">
                 </div>    
                 <br>
-                <button type="submit" class="btn btn-success pull-right">Editar</button>
+                <input type="submit" class=" btn btn-success pull-right" name="editar" value="Editar">
+                
             </form>          
         </div><!--container -->
         
-       <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
         <script src="/Prueba_final/celulares/main.js"></script>
     </body>
 </html>

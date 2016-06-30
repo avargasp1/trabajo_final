@@ -19,7 +19,7 @@
             <h1>Crea</h1>
             <h3>Sistemas Operativos</h3>
 
-            <form class=" form-horizontal ">
+            <form class=" form-horizontal " method="post" action="/Prueba_final/SistemaServ?crear=1">
                 <div class="form-group">
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
@@ -28,8 +28,8 @@
                     <input type="text" class="form-control tcal" name="fecha_creacion">
 
                     <label for="exampleInputName2">Programado en:</label>
-                    <select class="form-control" name="lenguaje_id">
-                        <option value="">hola hola</option>
+                    <select class="form-control" name="lenguaje_id" id="lenguaje">
+                        <option value="">Elige una opcion</option>
                         <%%>
                     </select>
 
@@ -42,5 +42,7 @@
                 <button type="submit" class="btn btn-success pull-right">Crear</button>
             </form>          
         </div><!--container -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+        <script src="/Prueba_final/celulares/main.js"></script>
     </body>
 </html>

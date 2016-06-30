@@ -63,6 +63,8 @@ public class Marcas {
     }
     
     public void actualizar(){
+        con = new Conexion();
+        con.setInsertar("update marcas set nombre='"+this.getNombre()+"' where marca_id='"+this.getMarca_id()+"'");
     }
     
     

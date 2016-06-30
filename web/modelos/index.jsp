@@ -39,7 +39,7 @@
                             out.println("<td>"+con.getResult().getString("modelo_id")+"</td>");
                             out.println("<td>"+con.getResult().getString("nombre")+"</td>");
                             out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/LenguajeServ?eliminar=" + con.getResult().getString("modelo_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/ModeloServ?eliminar=" + con.getResult().getString("modelo_id") + "'>Eliminar</a>" + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/modelos/editar.jsp?modelo_id=" + con.getResult().getString("modelo_id") + "'>Editar</a>" + "</td>");
                             out.println("</tr>");
                         }

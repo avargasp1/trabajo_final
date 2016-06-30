@@ -47,14 +47,6 @@ public class LenguajeProgramacion {
         this.estado = estado;
     }
 
-    public Conexion getCon() {
-        return con;
-    }
-
-    public void setCon(Conexion con) {
-        this.con = con;
-    }
-    
     //Metodos de modificacion de tabla
     public void crear() {
         con = new Conexion();

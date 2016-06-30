@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="">
+                    <input type="text" class="form-control" readonly Value="<%out.println(session.getAttribute("nombre"));%>">
                 </div>    
                 <br><% } %>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>

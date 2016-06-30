@@ -53,18 +53,19 @@ public class Usuario {
     //Metodos de modificacion de tabla
     public void crear(){
         con = new Conexion();
-        con.setInsertar("");
+        con.setInsertar("insert into usuarios (nombre,clave,estado) values('"+this.getNombre()+"','"+this.getClave()+"','activo')");
     }
     
     public void eliminar(){
         con = new Conexion();
-        con.setInsertar("");
+        con.setInsertar("update usuarios set estado='pasivo' where usuario_id='"+this.getUsuario_id()+"'");
     }
     
     public void actualizar(){
         con = new Conexion();
-        con.setInsertar("");
+        con.setInsertar("update usuarios set nombre='"+this.getNombre()+"', clave='"+this.getClave()+"' where usuario_id='"+this.getUsuario_id()+"'");
     }
+    
     public List lfuser() {
         con = new Conexion();
         List<String> lista = new ArrayList<>();

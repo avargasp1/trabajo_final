@@ -15,9 +15,9 @@
     </head>
     <body>
         <div class="container">
-            <h1>Marca</h1>
+            <h1>Usuarios</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Marca</a>
+            <a class="btn btn-success" href="/Prueba_final/usuarios/crear.jsp" role="button">Crear Usuario</a>
             <div class="pull-right">
                 <label>Buscar</label>
                 <input type="text" name="buscar">
@@ -26,19 +26,19 @@
             <table class="table table-striped">
                 <thead>
                     <th>ID</th>
-                    <th>Nombre</th>
+                    <th>Usuario</th>
 
                 </thead>
                 <tbody>
                     <%
                         Conexion con = new Conexion();
-                        con.setConsulta("select * from marcas where estado='activo'");
+                        con.setConsulta("select * from usuarios where estado='activo'");
                        while (con.getResult().next()){
                             out.println("<tr>");
-                            out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
+                            out.println("<td>"+con.getResult().getString("usuario_id")+"</td>");
                             out.println("<td>"+con.getResult().getString("nombre")+"</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/MarcaServ?eliminar="+con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/marcas/editar.jsp?marca_id=" + con.getResult().getString("marca_id") + "'>Editar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/UsuarioServ?eliminar="+con.getResult().getString("usuario_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/usuarios/editar.jsp?usuario_id=" + con.getResult().getString("usuario_id") + "'>Editar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>

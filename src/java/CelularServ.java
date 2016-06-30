@@ -78,7 +78,7 @@ public class CelularServ extends HttpServlet {
                 celu.setCelular_id(celular_id);
                 celu.actualizar();
                 
-                response.sendRedirect("/Prueba3/celular/index.jsp");
+                response.sendRedirect("/Prueba3/celulares/index.jsp");
             
            }     
         }
