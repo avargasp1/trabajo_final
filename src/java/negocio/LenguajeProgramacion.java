@@ -11,9 +11,7 @@ public class LenguajeProgramacion {
     String estado;
     
     //clases
-    Conexion con;
-    
-    
+    Conexion con ;
     
     //Metodos getter & setter
 
@@ -59,14 +57,17 @@ public class LenguajeProgramacion {
     
     //Metodos de modificacion de tabla
     public void crear() {
+        con = new Conexion();
         con.setInsertar("inser into lenguajes_programacion (nombre, fecha_creacion, estado) values ('"+this.getNombre()+"', '"+this.getFecha_creacion()+"', 'activo')");
     }
 
     public void eliminar() {
+        con = new Conexion();
         con.setInsertar("update lenguajes_programacion set estado='pasivo' where lenguaje_id= '"+this.getLenguaje_id()+"'");
     }
 
     public void actualizar() {
+        con = new Conexion();
         con.setInsertar("update lenguajes_programacion set nombre='"+this.getNombre()+"', fecha_creacion='"+this.getFecha_creacion()+"' where lenguaje_id='"+this.getLenguaje_id()+"'");
     }
 

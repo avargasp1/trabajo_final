@@ -7,7 +7,8 @@ $.getJSON("/Prueba_final/Api?modulo=so", function(data){
 });
 
 $.getJSON("/Prueba_final/Api?modulo=marca", function(data){
-   $.each(data, function(i,d){
+    
+    $.each(data, function(i,d){
        //$("#marcas").empty().append('whatever');
        $("#marcas").append("<option value='"+d.marca_id+"'>"+ d.nombre+"</option>");
    });

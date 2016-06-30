@@ -3,7 +3,7 @@ package negocio;
 import conexion.Conexion;
 
 public class Modelos {
-    
+
     //Variables
     int modelo_id;
     String nombre;
@@ -13,9 +13,7 @@ public class Modelos {
 
     //clases
     Conexion con;
-    
-    
-    
+
     // metodos getter and setter
     public int getModelo_id() {
         return modelo_id;
@@ -57,24 +55,20 @@ public class Modelos {
         this.marca_id = marca_id;
     }
 
-    public Conexion getCon() {
-        return con;
+
+    //Metodos de modificacion de tabla
+    public void crear() {
+        con = new Conexion();
+        con.setConsulta("");
     }
 
-    public void setCon(Conexion con) {
-        this.con = con;
+    public void eliminar() {
+        con = new Conexion();
+        con.setConsulta("");
     }
-    
-    //Metodos de modificacion de tabla
-    public void crear(){
-        
-    }
-    
-    public void eliminar(){
-    
-    }
-    
-    public void actualizar(){
-    
+
+    public void actualizar() {
+        con = new Conexion();
+        con.setConsulta("");
     }
 }

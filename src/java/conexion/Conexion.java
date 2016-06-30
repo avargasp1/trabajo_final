@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Conexion {
@@ -33,6 +35,7 @@ public class Conexion {
             stmt = con.createStatement();
             stmt.executeQuery(sql);
             rs = stmt.getResultSet();
+            
         } catch (SQLException ex) {
         }
     }
@@ -46,7 +49,9 @@ public class Conexion {
         try {
             stmt = con.createStatement();
             stmt.executeUpdate(sql);
+            con.close();
         } catch (SQLException ex) {
         }
+        
     }
 }

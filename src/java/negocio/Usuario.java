@@ -1,6 +1,8 @@
 package negocio;
 
 import conexion.Conexion;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
     
@@ -48,25 +50,34 @@ public class Usuario {
         this.estado = estado;
     }
 
-    public Conexion getCon() {
-        return con;
-    }
-
-    public void setCon(Conexion con) {
-        this.con = con;
-    }
-    
     //Metodos de modificacion de tabla
     public void crear(){
-        
+        con = new Conexion();
+        con.setInsertar("");
     }
     
     public void eliminar(){
-    
+        con = new Conexion();
+        con.setInsertar("");
     }
     
     public void actualizar(){
-    
+        con = new Conexion();
+        con.setInsertar("");
     }
-    
+    public List lfuser() {
+        con = new Conexion();
+        List<String> lista = new ArrayList<>();
+        con.setConsulta("select nombre ,clave, usuario_id from usuarios where nombre='" + this.getNombre() + "'");
+        try {
+            while (con.getResult().next()) {
+                lista.add(con.getResult().getString("nombre"));
+                lista.add(con.getResult().getString("clave"));
+                lista.add(con.getResult().getString("usuario_id"));
+            }
+        } catch (Exception e) {
+        }
+        //try{con.getResult().close();}catch(Exception e){}
+        return lista;
+    }
 }

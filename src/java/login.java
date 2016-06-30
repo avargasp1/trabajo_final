@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import negocio.Usuario;
 
 /**
  *
@@ -33,15 +35,32 @@ public class login extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            Conexion con = new Conexion ();
-            
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
             
-            con.setConsulta("select nombre from usuarios");
-            con.getResult();
-            con.setConsulta("select clave form usuarios");
+            Usuario usuario = new Usuario();
             
+            usuario.setNombre(user);
+            usuario.setClave(pass);
+            usuario.lfuser();
+            
+            if (usuario.lfuser().contains(user)) {
+                
+                if (usuario.lfuser().contains(pass)) {
+
+                    HttpSession session;            
+                    session = request.getSession();
+                    session.setAttribute("nombre", user);                    
+                    session.setAttribute("usuario_id", usuario.lfuser().get(2));
+                    response.sendRedirect("/Prueba_final/principal.jsp");
+
+
+                } else {
+                    response.sendRedirect("/Prueba_final/index.jsp");
+                }
+            } else {
+                response.sendRedirect("/Prueba_final/index.jsp");
+            }
             
             
         }

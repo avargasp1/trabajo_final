@@ -36,7 +36,7 @@
 
             <div class="starter-template text-center">
 
-                <form class="form-inline">
+                <form class="form-inline" method="post" action="login">
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputEmail3">Usuario</label>
                         <input type="text" class="form-control" id="user" name="user" placeholder="Usuario">

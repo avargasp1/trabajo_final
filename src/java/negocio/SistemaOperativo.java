@@ -12,7 +12,7 @@ public class SistemaOperativo {
     private int lenguaje_id;
 
     //clases
-    Conexion con;
+    Conexion con ;
 
     //Metodos Getter & Setter
     public int getSistema_id() {
@@ -59,14 +59,17 @@ public class SistemaOperativo {
 
     //Metodos de modificacion de tabla
     public void crear() {
+        con = new Conexion();
         con.setInsertar("insert into sistemas_operativos (nombre, fecha_creacion, estado, lenguaje_id) values ('"+this.getNombre()+"','"+this.getFecha_creacion()+"','activo','"+this.getLenguaje_id()+"')");
     }
 
     public void eliminar() {
+        con = new Conexion();
         con.setInsertar("update sistemas_operativos set estado= pasivo where sistema_id='"+this.getSistema_id()+"'");
     }
 
     public void actualizar() {
+        con = new Conexion();
         con.setInsertar("update sistemas_operativos set nombre = '"+this.getNombre()+"', fecha_creacion= '"+this.getFecha_creacion()+"', lenguaje_id= '"+this.getLenguaje_id()+"' where sistema_id='"+this.getSistema_id()+"'");
     }
 

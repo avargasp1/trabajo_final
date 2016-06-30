@@ -45,8 +45,11 @@ public class CelularServ extends HttpServlet {
                 String chip =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha_creacion");
                 int numero = Integer.parseInt(request.getParameter("numero"));
+                
                 int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                String creador = request.getParameter("creador");
+                
+                out.println(chip +" "+ fecha_creacion+ " " + numero + " " + sistema_id);
+                /*String creador = request.getParameter("creador");
                 int modelo_id = Integer.parseInt(request.getParameter("modelo_id"));
                 
                 celu.setChip(chip);
@@ -57,7 +60,7 @@ public class CelularServ extends HttpServlet {
                 celu.setModelo_id(modelo_id);
                 celu.crear();
                 
-                response.sendRedirect("/Prueba3/celular/index.jsp");
+                response.sendRedirect("/Prueba3/celular/index.jsp");*/
               
            }if(request.getParameter("editar") != null){
                 int celular_id = Integer.parseInt(request.getParameter("celular_id"));
