@@ -19,13 +19,11 @@
             <h1>Crea</h1>
             <h3>Marca</h3>
 
-            <form class=" form-horizontal ">
+            <form class=" form-horizontal " method="post" action="/Prueba_final/MarcaServ?crear=1">
                 <div class="form-group">
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
 
-                    <label for="exampleInputName2">Fecha de Creacion</label>
-                    <input type="text" class="form-control tcal" name="fecha_creacion">
 
                 </div>
                 <div class="form-horizontal">

@@ -24,7 +24,7 @@
         %>
         <div class="container">
             <h1>Editar</h1>
-            <h3>Celulares</h3>
+            <h3>Sistemas Operativos</h3>
 
             <form class=" form-horizontal " method="post" action="/Prueba_final/SistemaServ?editar=<% out.println(con.getResult().getString("sistema_id")); %>">
                 <div class="form-group">

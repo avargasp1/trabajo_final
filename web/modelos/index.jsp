@@ -39,7 +39,7 @@
         <div class="container">
             <h1>Modelos</h1>
             <br>
-            <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Modelo</a>
+            <a class="btn btn-success" href="/Prueba_final/modelos/crear.jsp" role="button">Crear Modelo</a>
             <div class="pull-right">
                 <label>Buscar</label>
                 <input type="text" name="buscar">

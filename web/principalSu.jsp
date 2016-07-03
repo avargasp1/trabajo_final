@@ -42,7 +42,7 @@
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/celulares/index.jsp">Celular</a> <br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/Sistemas_operativos/index.jsp">Sistemas operativos</a><br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Progamacion</a><br><br>
-            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/usuario/index.jsp">Usuarios</a><br><br>
+            <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/usuarios/index.jsp">Usuarios</a><br><br>
             
             <!--<a class="btn btn-primary" href=""></a>-->
         </div>

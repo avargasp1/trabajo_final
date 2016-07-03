@@ -36,10 +36,26 @@ public class MarcaServ extends HttpServlet {
             
             if (request.getParameter("eliminar") !=  null){
                 int id = Integer.parseInt(request.getParameter("eliminar"));
-                out.println(id);
+                
                 marca.setMarca_id(id);
                 marca.eliminar();
                 
+                response.sendRedirect("/Prueba_final/marcas/index.jsp");
+            }
+            if (request.getParameter("crear") !=  null){
+                String nombre = request.getParameter("nombre");
+                
+                marca.setNombre(nombre);
+                marca.crear();
+                response.sendRedirect("/Prueba_final/marcas/index.jsp");
+            }
+            if (request.getParameter("editar") !=  null){
+                String nombre = request.getParameter("nombre");
+                int id = Integer.parseInt(request.getParameter("editar"));
+                
+                marca.setMarca_id(id);
+                marca.setNombre(nombre);
+                marca.actualizar();
                 response.sendRedirect("/Prueba_final/marcas/index.jsp");
             }
             

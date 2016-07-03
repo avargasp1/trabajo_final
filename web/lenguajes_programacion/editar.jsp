@@ -28,7 +28,7 @@
             <div class="form-horizontal">
 
             </div>
-            <form class=" form-horizontal" method="post" action="/Prueba_final/LenguajeServ?crear=<% out.println(con.getResult().getString("lenguaje_id")); %>">
+            <form class=" form-horizontal" method="post" action="/Prueba_final/LenguajeServ?editar=<% out.println(con.getResult().getString("lenguaje_id")); %>">
                 <div class="form-group">
                     <label>ID</label>
                     <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("lenguaje_id")); %>">

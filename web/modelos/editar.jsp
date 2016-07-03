@@ -17,38 +17,36 @@
     </head>
     <body>
         <%
-            Conexion con = new Conexion ();
+            Conexion con = new Conexion();
             String modelo_id = request.getParameter("modelo_id");
-                con.setConsulta("select * from modelos where modelo_id='"+modelo_id+"'");
-                while(con.getResult().next()){
+            con.setConsulta("select * from modelos where modelo_id='" + modelo_id + "'");
+            while (con.getResult().next()) {
         %>
         <div class="container">
             <h1>Editar</h1>
-            <h3>Lenguaje de Programacion</h3>
-            <div class="form-horizontal">
-                <label>ID</label>
-                <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("modelo_id")); %>">
-            </div>
-            <form class=" form-horizontal ">
-                <div class="form-group">
+            <h3>Modelos</h3>
 
+            <form class=" form-horizontal " method="post" action="/Prueba_final/ModeloServ?editar=<% out.println(con.getResult().getString("modelo_id")); %>">
+                <div class="form-group">
+                    <div class="form-horizontal">
+                        <label>ID</label>
+                        <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("modelo_id")); %>">
+                    </div>
 
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
-                    <label for="exampleInputName2">Nombre</label>
-                    <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("marca_id")); %>">
-
-
+                    <label for="exampleInputName2">Marca</label>
+                    <select class="form-control" name="marca" id="marcas" >
+                        <option value="<% out.println(con.getResult().getString("marca_id")); %>">elija una opcion...</option>
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
                     <input type="text" class="form-control" readonly Value="<%out.println(session.getAttribute("nombre"));%>">
                 </div>    
-                <br><% } %>
+                <br><% }%>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>
             </form>          
         </div><!--container -->
     </body>
 </html>
- 

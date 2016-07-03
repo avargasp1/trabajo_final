@@ -37,10 +37,24 @@ public class ModeloServ extends HttpServlet {
             if (request.getParameter("eliminar") != null){
                 
                 int id = Integer.parseInt(request.getParameter("eliminar"));
+                
                 modelo.setModelo_id(id);
                 modelo.eliminar();
                 
                 response.sendRedirect("/Prueba_final/modelos/index.jsp");
+            }
+            if (request.getParameter("crear") != null){
+                String nombre = request.getParameter("nombre");
+                String creado = request.getParameter("creado_por");
+                int idMarca = Integer.parseInt(request.getParameter("marca"));
+                
+                modelo.setNombre(nombre);
+                modelo.setMarca_id(idMarca);
+                modelo.setCreado_por(creado);
+                modelo.crear();
+                
+                response.sendRedirect("/Prueba_final/modelos/index.jsp");
+                     
             }
             
             

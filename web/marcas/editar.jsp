@@ -17,26 +17,26 @@
     </head>
     <body>
         <%
-            Conexion con = new Conexion ();
+            Conexion con = new Conexion();
             String marca_id = request.getParameter("marca_id");
-                con.setConsulta("select * from marcas where marca_id='"+marca_id+"'");
-                while(con.getResult().next()){
+            con.setConsulta("select * from marcas where marca_id='" + marca_id + "'");
+            while (con.getResult().next()) {
         %>
         <div class="container">
             <h1>Editar</h1>
             <h3>Lenguaje de Programacion</h3>
-            <div class="form-horizontal">
-                <label>ID</label>
-                <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("marca_id")); %>">
-            </div>
-            <form class=" form-horizontal ">
-                <div class="form-group">
 
+            <form class=" form-horizontal " method="post" action="/Prueba_final/MarcaServ?editar=<% out.println(con.getResult().getString("marca_id")); %>">
+                <div class="form-group">
+                    <div class="form-horizontal">
+                        <label>ID</label>
+                        <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("marca_id")); %>">
+                    </div>
 
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
-                    
+
 
 
                 </div>
@@ -44,10 +44,9 @@
                     <label>creado por:</label>
                     <input type="text" class="form-control" readonly value="">
                 </div>    
-                <br><% } %>
+                <br><% }%>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>
             </form>          
         </div><!--container -->
     </body>
 </html>
- 
