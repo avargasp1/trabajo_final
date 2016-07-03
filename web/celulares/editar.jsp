@@ -49,16 +49,19 @@
                         <option value="">Elija una opcion...</option>
                         <%%>
                     </select>
-
+                    <label for="exampleInputName2">Marca</label>
+                    <select class="form-control" name="marca" id="marcas">
+                        <option>elija una opcion...</option>
+                    </select>
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo" >
-                        <option value="<% out.println(con.getResult().getString("numero")); %>">Elija una opcion...</option>
+                        <option value="<% //out.println(con.getResult().getString("modelo_id")); %>">Elija una opcion...</option>
                         <% }%>
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="<%out.println(session.getAttribute("nombre"));%>">
+                    <input type="text" class="form-control" readonly value="<%out.println(con.getResult().getString("numero")); %>">
                 </div>    
                 <br>
                 <input type="submit" class=" btn btn-success pull-right" name="editar" value="Editar">

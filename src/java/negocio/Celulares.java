@@ -85,7 +85,7 @@ public class Celulares {
     //Metodos de modificacion de tabla
     public void crear(){
         con = new Conexion();
-        con.setInsertar("inser into celulares (tipo_chip,fecha_creacion,numero,sistema_id,estado,creado_por,modelo_id) values('"+this.getChip()+"','"+this.getFecha_creacion()+"','"+this.getNumero()+"','"+this.getSistema_id()+"','activo','"+this.getCreado_por()+"','"+this.getModelo_id()+"')");
+        con.setInsertar("insert into celulares (tipo_chip,fecha_creacion,numero,sistema_id,estado,creado_por,modelo_id) values('"+this.getChip()+"','"+this.getFecha_creacion()+"','"+this.getNumero()+"','"+this.getSistema_id()+"','activo','"+this.getCreado_por()+"','"+this.getModelo_id()+"')");
     }
     
     public void eliminar(){

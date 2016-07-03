@@ -36,13 +36,10 @@
                     <label for="exampleInputName2">Nombre</label>
                     <input type="text" class="form-control" name="nombre"  value="<% out.println(con.getResult().getString("nombre")); %>">
 
-
-
-
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="">
+                    <input type="text" class="form-control" readonly value="<% out.println(con.getResult().getString("creado_por")); %>">
                 </div>    
                 <br><% }%>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>

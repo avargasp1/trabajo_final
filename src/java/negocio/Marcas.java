@@ -54,7 +54,7 @@ public class Marcas {
     //Metodos de modificacion de tabla
     public void crear(){
         con = new Conexion();
-        con.setInsertar("insert into marcas(nombre, estado) values ('"+this.getNombre()+"','activo') ");
+        con.setInsertar("insert into marcas(nombre, estado, creado_por) values ('"+this.getNombre()+"','activo','"+this.getCreado_por()+"') ");
     }
     
     public void eliminar(){

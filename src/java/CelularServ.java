@@ -45,12 +45,9 @@ public class CelularServ extends HttpServlet {
                 String chip =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha_creacion");
                 int numero = Integer.parseInt(request.getParameter("numero"));
-                
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                
-                out.println(chip +" "+ fecha_creacion+ " " + numero + " " + sistema_id);
-                /*String creador = request.getParameter("creador");
-                int modelo_id = Integer.parseInt(request.getParameter("modelo_id"));
+                int sistema_id = Integer.parseInt(request.getParameter("sistema_operativo"));
+                int modelo_id = Integer.parseInt(request.getParameter("modelo"));
+                String creador = request.getParameter("creador");
                 
                 celu.setChip(chip);
                 celu.setFecha_creacion(fecha_creacion);
@@ -59,26 +56,29 @@ public class CelularServ extends HttpServlet {
                 celu.setCreado_por(creador);
                 celu.setModelo_id(modelo_id);
                 celu.crear();
+           
+                response.sendRedirect("/Prueba_final/celulares/index.jsp"); 
                 
-                response.sendRedirect("/Prueba3/celular/index.jsp");*/
-              
            }if(request.getParameter("editar") != null){
-                int celular_id = Integer.parseInt(request.getParameter("celular_id"));
+                int id=Integer.parseInt(request.getParameter("editar"));
                 String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha");
+                String fecha_creacion = request.getParameter("fecha_creacion");
                 int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
+                int sistema_id = Integer.parseInt(request.getParameter("sistema_operativo"));
+                int modelo_id = Integer.parseInt(request.getParameter("modelo"));
                 String creador = request.getParameter("creador");
-               
+                
+                celu.setCelular_id(id);
                 celu.setChip(chip);
                 celu.setFecha_creacion(fecha_creacion);
                 celu.setNumero(numero);
                 celu.setSistema_id(sistema_id);
                 celu.setCreado_por(creador);
-                celu.setCelular_id(celular_id);
+                celu.setModelo_id(modelo_id);
+                
                 celu.actualizar();
                 
-                response.sendRedirect("/Prueba3/celulares/index.jsp");
+                response.sendRedirect("/Prueba_final/celulares/index.jsp");
             
            }     
         }

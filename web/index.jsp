@@ -11,7 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Celulares - Evaluacion final</title>
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
-        
+       
+        <% /*HttpSession logeado = request.getSession(true);
+            String result = (String) logeado.getAttribute("valido");
+            if (result.equals("true") & result != null) {
+            } else {
+                response.sendRedirect("index.jsp");
+            }*/
+        %>
 
     </head>
     <body>

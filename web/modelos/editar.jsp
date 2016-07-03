@@ -39,10 +39,9 @@
                     <label for="exampleInputName2">Marca</label>
                     <select class="form-control" name="marca" id="marcas" >
                         <option value="<% out.println(con.getResult().getString("marca_id")); %>">elija una opcion...</option>
-                </div>
-                <div class="form-horizontal">
+                    </select>
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly Value="<%out.println(session.getAttribute("nombre"));%>">
+                    <input type="text" class="form-control" readonly Value="<%out.println(con.getResult().getString("creado_por"));%>">
                 </div>    
                 <br><% }%>
                 <button type="submit" class="btn btn-success pull-right">Editar</button>

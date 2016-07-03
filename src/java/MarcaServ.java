@@ -44,8 +44,10 @@ public class MarcaServ extends HttpServlet {
             }
             if (request.getParameter("crear") !=  null){
                 String nombre = request.getParameter("nombre");
+                String creador = request.getParameter("creado_por");
                 
                 marca.setNombre(nombre);
+                marca.setCreado_por(nombre);
                 marca.crear();
                 response.sendRedirect("/Prueba_final/marcas/index.jsp");
             }

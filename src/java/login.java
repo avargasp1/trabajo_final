@@ -48,12 +48,22 @@ public class login extends HttpServlet {
                 
                 if (usuario.lfuser().contains(pass)) {
 
-                    HttpSession session;            
-                    session = request.getSession();
-                    session.setAttribute("nombre", user);                    
-                    session.setAttribute("usuario_id", usuario.lfuser().get(2));
-                    response.sendRedirect("/Prueba_final/principal.jsp");
-
+                    if (user.equals("admin") && pass.equals("admin")){
+                        HttpSession session;            
+                        session = request.getSession();
+                        session.setAttribute("nombre", user);                    
+                        session.setAttribute("usuario_id", usuario.lfuser().get(2));
+                        session.setAttribute("valido", true);
+                        response.sendRedirect("/Prueba_final/principalSu.jsp");
+                    }else{
+                        HttpSession session;            
+                        session = request.getSession();
+                        session.setAttribute("nombre", user);                    
+                        session.setAttribute("usuario_id", usuario.lfuser().get(2));
+                        session.setAttribute("valido", true);
+                        response.sendRedirect("/Prueba_final/principal.jsp");
+                    }
+                    
 
                 } else {
                     response.sendRedirect("/Prueba_final/index.jsp");

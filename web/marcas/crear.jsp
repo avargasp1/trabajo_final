@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="">
+                    <input type="text" class="form-control" name="creado_por" readonly value="<%out.println(session.getAttribute("nombre"));%>">
                 </div>    
                 <br>
                 <button type="submit" class="btn btn-success pull-right" name="crear" value="1">Crear</button>
