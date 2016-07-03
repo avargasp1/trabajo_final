@@ -46,9 +46,9 @@
             <a class="btn btn-success" href="/Prueba_final/marcas/index.jsp">Marca</a>
             
             <div class="pull-right">
-                <label> Buscar</label>
-                <input type="text" name="buscar">
-                <input type="submit" class="btn btn-success" name="buscar">
+                <form method="post">
+                  <input type="text" name="buscar">
+                <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
                 <%
                 Conexion con = new Conexion();
                 
@@ -63,7 +63,9 @@
                 } else {
                     con.setConsulta("select * from celulares where estado='activo'");
                 }
-            %>
+            %>  
+                </form>
+                
             </div>
             
             <br>

@@ -52,13 +52,13 @@
 
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo" >
-                        <option value="">Elija una opcion...</option>
+                        <option value="<% out.println(con.getResult().getString("numero")); %>">Elija una opcion...</option>
                         <% }%>
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="">
+                    <input type="text" class="form-control" readonly value="<%out.println(session.getAttribute("nombre"));%>">
                 </div>    
                 <br>
                 <input type="submit" class=" btn btn-success pull-right" name="editar" value="Editar">

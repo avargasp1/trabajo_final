@@ -38,11 +38,7 @@
                         <option value="">elija una opcion...</option>
                     </select>
                     
-                    <label for="exampleInputName2">Marca</label>
-                    <select class="form-control" name="marca" id="marcas" >
-                        <option>elija una opcion...</option>
-                        
-                    </select>
+                    
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo">
                         <option>elija una opcion...</option>
@@ -51,7 +47,7 @@
                 </div>
                     <div class="form-horizontal">
                         <label>creado por:</label>
-                        <input type="text" class="form-control" readonly value="">
+                        <input type="text" class="form-control" readonly value="<%out.println(session.getAttribute("nombre"));%>">
                     </div>    
                     <br>
                     <button type="submit" class="btn btn-success pull-right">Crear</button>
