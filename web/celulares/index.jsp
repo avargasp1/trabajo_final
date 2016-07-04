@@ -58,7 +58,7 @@
                         con.setConsulta("select * from celulares where estado='activo'");
                     } else {
                         int numero = Integer.parseInt(request.getParameter("buscar"));
-                        con.setConsulta("select * from celulares where numero = '" + numero + "' and estado='activo'");
+                        con.setConsulta("select * from celulares where numero like '%" + numero + "%' and estado='activo'");
                     }
                 } else {
                     con.setConsulta("select * from celulares where estado='activo'");
@@ -81,7 +81,6 @@
                 </thead>
                 <tbody>
                     <%
-                        
                        while (con.getResult().next()){
                             out.println("<tr>");
                             out.println("<td>"+con.getResult().getString("celular_id")+"</td>");
@@ -90,8 +89,8 @@
                             out.println("<td>"+con.getResult().getString("numero")+"</td>");
                             out.println("<td>"+con.getResult().getString("sistema_id")+"</td>");
                             out.println("<td>"+con.getResult().getString("Modelo_id")+"</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/CelularServ?eliminar=" + con.getResult().getString("celular_id") + "'>Eliminar</a>" + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/celulares/editar.jsp?celular_id=" + con.getResult().getString("celular_id") + "'>Editar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/CelularServ?eliminar=" + con.getResult().getString("celular_id") + "'>Eliminar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>

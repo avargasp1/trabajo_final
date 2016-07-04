@@ -31,7 +31,7 @@
                         <li><a href="/Prueba_final/Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
                         <li><a href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
                         <li><a href="/Prueba_final/index.jsp" class="pull-right">Log Out</a></li>
-                        
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -41,35 +41,52 @@
             <br>
             <a class="btn btn-success" href="/Prueba_final/lenguajes_programacion/crear.jsp" role="button">Crear Lenguaje</a>
             <div class="pull-right">
-                <label>Buscar</label>
-                <input type="text" name="buscar">
+                <form method="post">
+                    <input type="text" name="buscar">
+                    <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
+                    <%
+                        Conexion con = new Conexion();
+
+                        if (request.getParameter("buscar") != null) {
+                            if (request.getParameter("buscar").isEmpty()) {
+
+                                con.setConsulta("select * from lenguajes_programacion where estado='activo'");
+                            } else {
+                                String nombre = request.getParameter("buscar");
+                                con.setConsulta("select * from lenguajes_programacion where nombre like '%" + nombre + "%' and estado='activo'");
+                            }
+                        } else {
+                            con.setConsulta("select * from lenguajes_programacion where estado='activo'");
+                        }
+                    %>  
+                </form>
+
             </div>
             <br>
             <table class="table table-striped">
                 <thead>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Fecha de creacion</th>
-                    
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha de creacion</th>
+
                 </thead>
                 <tbody>
                     <%
-                        Conexion con = new Conexion();
-                        con.setConsulta("select * from lenguajes_programacion where estado='activo'");
-                       while (con.getResult().next()){
+                        while (con.getResult().next()) {
                             out.println("<tr>");
-                            out.println("<td>"+con.getResult().getString("lenguaje_id")+"</td>");
-                            out.println("<td>"+con.getResult().getString("nombre")+"</td>");
-                            out.println("<td>"+con.getResult().getString("fecha_creacion")+"</td>");
+                            out.println("<td>" + con.getResult().getString("lenguaje_id") + "</td>");
+                            out.println("<td>" + con.getResult().getString("nombre") + "</td>");
+                            out.println("<td>" + con.getResult().getString("fecha_creacion") + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/LenguajeServ?eliminar=" + con.getResult().getString("lenguaje_id") + "'>Eliminar</a>" + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/lenguajes_programacion/editar.jsp?lenguaje_id=" + con.getResult().getString("lenguaje_id") + "'>Editar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>
-                    
+
                 </tbody>
-                    <a class="btn btn-success pull-right" href="/Prueba_final/marcas/index.jsp">Generar reporte</a>
+
             </table>      
+            <a class="btn btn-success pull-right" href="/Prueba_final/marcas/index.jsp">Generar reporte</a>
         </div>
 
     </body>

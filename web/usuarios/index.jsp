@@ -33,7 +33,7 @@
                             <li><a href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
                             <li><a href="/Prueba_final/index.jsp" class="pull-right">Log Out</a></li>
                         </ul>
-                        
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -43,8 +43,26 @@
             <br>
             <a class="btn btn-success" href="/Prueba_final/usuarios/crear.jsp" role="button">Crear Usuario</a>
             <div class="pull-right">
-                <label>Buscar</label>
-                <input type="text" name="buscar">
+                <form method="post">
+                    <input type="text" name="buscar">
+                    <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
+                    <%
+                        Conexion con = new Conexion();
+
+                        if (request.getParameter("buscar") != null) {
+                            if (request.getParameter("buscar").isEmpty()) {
+
+                                con.setConsulta("select * from usuarios where estado='activo'");
+                            } else {
+                                String nombre = request.getParameter("buscar");
+                                con.setConsulta("select * from usuarios where nombre like '%" + nombre + "%' and estado='activo'");
+                            }
+                        } else {
+                            con.setConsulta("select * from usuarios where estado='activo'");
+                        }
+                    %>  
+                </form>
+
             </div>
             <br>
             <table class="table table-striped">
@@ -55,14 +73,12 @@
                 </thead>
                 <tbody>
                     <%
-                        Conexion con = new Conexion();
-                        con.setConsulta("select * from usuarios where estado='activo'");
                         while (con.getResult().next()) {
                             out.println("<tr>");
                             out.println("<td>" + con.getResult().getString("usuario_id") + "</td>");
                             out.println("<td>" + con.getResult().getString("nombre") + "</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/UsuarioServ?eliminar=" + con.getResult().getString("usuario_id") + "'>Eliminar</a>" + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/usuarios/editar.jsp?usuario_id=" + con.getResult().getString("usuario_id") + "'>Editar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/UsuarioServ?eliminar=" + con.getResult().getString("usuario_id") + "'>Eliminar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>

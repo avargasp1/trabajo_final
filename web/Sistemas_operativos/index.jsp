@@ -38,13 +38,14 @@
         </nav>
         <br><br><br>
         <div class="container">
-            <h1>Celulares</h1>
+            <h1>Sistemas Operativos</h1>
             <br>
             <a class="btn btn-success" href="/Prueba_final/Sistemas_operativos/crear.jsp" role="button">Crear Sistema Operativo</a>
             <br>
             <div class="pull-right">
                 <label> Buscar</label>
-                <input type="text" name="buscar">
+                <form>
+                  <input type="text" name="buscar">
                 <input type="submit" class="btn btn-success" name="buscar">
                 <%
                 Conexion con = new Conexion();
@@ -54,12 +55,14 @@
 
                         con.setConsulta("select * from sistemas_operativos where estado='activo'");
                     } else {
-                        int nombre = Integer.parseInt(request.getParameter("buscar"));
-                        con.setConsulta("select * from sistemas_operativos where nombre = '" + nombre + "' and estado='activo'");
+                        String nombre = request.getParameter("buscar");
+                        con.setConsulta("select * from sistemas_operativos where nombre like '%" + nombre + "%' and estado='activo'");
                     }
                 } else {
                     con.setConsulta("select * from sistemas_operativos where estado='activo'");                }
-            %>
+            %>  
+                </form>
+                
             </div>
             <table class="table table-striped">
                 <thead>
