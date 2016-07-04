@@ -13,6 +13,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%  
+            if(session.getAttribute("nombre") != null){
+                
+            }else {
+                response.sendRedirect("/Prueba_final/index.jsp");
+            }
+        %>
     </head>
     <body>
         <%

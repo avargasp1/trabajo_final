@@ -13,7 +13,13 @@
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
         <script type="text/javascript" src="../template/calendar/tcal.js"></script>
-        
+        <%  
+            if(session.getAttribute("nombre") != null){
+                
+            }else {
+                response.sendRedirect("/Prueba_final/index.jsp");
+            }
+        %>
     </head>
     <body>
         <div class="container">
