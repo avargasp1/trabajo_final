@@ -50,14 +50,14 @@ public class login extends HttpServlet {
 
                     if (user.equals("admin") && pass.equals("admin")){
                         HttpSession session;            
-                        session = request.getSession(true);
+                        session = request.getSession();
                         session.setAttribute("nombre", user);                    
                         session.setAttribute("usuario_id", usuario.lfuser().get(2));
                         
                         response.sendRedirect("/Prueba_final/principalSu.jsp");
                     }else{
                         HttpSession session;            
-                        session = request.getSession(true);
+                        session = request.getSession();
                         session.setAttribute("nombre", user);                    
                         session.setAttribute("usuario_id", usuario.lfuser().get(2));
                         

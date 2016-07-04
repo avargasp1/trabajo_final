@@ -14,7 +14,11 @@
         <title>Celulares - Evaluacion final</title>
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
         <%  
-            
+            if(session.getAttribute("nombre") != null){
+                
+            }else {
+                response.sendRedirect("/Prueba_final/index.jsp");
+            }
         %>
     </head>
     <body>
@@ -32,11 +36,11 @@
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <ul class="nav navbar-nav">
-                        <li><a href="celulares/index.jsp">Celulares</a></li>
-                        <li><a href="Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
-                        <li><a href="lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
-                        <li><a href="index.jsp" class="pull-right">Log Out</a></li>
-                    </ul>
+                            <li><a href="celulares/index.jsp">Celulares</a></li>
+                            <li><a href="Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
+                            <li><a href="lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
+                            <li><a href="index.jsp" class="pull-right">Log Out</a></li>
+                        </ul>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -47,13 +51,13 @@
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/celulares/index.jsp">Celular</a><br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/Sistemas_operativos/index.jsp">Sistemas operativos</a><br><br>
             <a class="btn btn-primary btn-lg btn-block" href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Progamacion</a><br><br>
-            
+
             <!--<a class="btn btn-primary" href=""></a>-->
         </div>
         <br><br><br>
         <div class="container">
 
-          
+
 
         </div><!-- /.container -->
 

@@ -12,12 +12,16 @@ $.getJSON("/Prueba_final/Api?modulo=modelo", function (data) {
     });
 });
 
-$.getJSON("/Prueba_final/Api?modulo=marca", function (data) {
-    $.each(data, function (i, d) {
-        //$("#marcas").empty()
-        $("#marcas").append("<option value='" + d.marca_id + "'>" + d.nombre + "</option>");
+$("#modelo").change(function() {
+    var modelo_id = $("#modelo").val();
+    $.getJSON("/Prueba_final/Api?modulo=marca&marca_id="+modelo_id, function (data) {
+        $("#marcas").empty();
+        $.each(data, function (i, d) {
+            $("#marcas").append("<option value='" + d.marca_id + "'>" + d.nombre + "</option>");
+        });
     });
 });
+
 
 $.getJSON("/Prueba_final/Api?modulo=lenguaje", function (data) {
     $.each(data, function (i, d) {
