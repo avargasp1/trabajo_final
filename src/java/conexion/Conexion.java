@@ -29,6 +29,10 @@ public class Conexion {
         }
     }
     
+    public Connection getConexion(){
+        return con;
+    }
+    
     public void setConsulta(String sql) {
 
         try {
