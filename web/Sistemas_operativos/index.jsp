@@ -88,7 +88,7 @@
                 </tbody>
                    
             </table>
-        <a class="btn btn-success pull-right" href="/Prueba_final/marcas/index.jsp">Generar reporte</a>
+        <a class="btn btn-success pull-right" href="/Prueba_final/Sistemas_operativos/sistema_reporte.jsp">Generar reporte</a>
         </div>
 
     </body>

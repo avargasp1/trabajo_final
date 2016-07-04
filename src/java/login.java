@@ -37,7 +37,7 @@ public class login extends HttpServlet {
             
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
-            
+
             Usuario usuario = new Usuario();
             
             usuario.setNombre(user);
@@ -50,17 +50,17 @@ public class login extends HttpServlet {
 
                     if (user.equals("admin") && pass.equals("admin")){
                         HttpSession session;            
-                        session = request.getSession();
+                        session = request.getSession(true);
                         session.setAttribute("nombre", user);                    
                         session.setAttribute("usuario_id", usuario.lfuser().get(2));
-                        session.setAttribute("valido", true);
+                        
                         response.sendRedirect("/Prueba_final/principalSu.jsp");
                     }else{
                         HttpSession session;            
-                        session = request.getSession();
+                        session = request.getSession(true);
                         session.setAttribute("nombre", user);                    
                         session.setAttribute("usuario_id", usuario.lfuser().get(2));
-                        session.setAttribute("valido", true);
+                        
                         response.sendRedirect("/Prueba_final/principal.jsp");
                     }
                     
@@ -71,8 +71,7 @@ public class login extends HttpServlet {
             } else {
                 response.sendRedirect("/Prueba_final/index.jsp");
             }
-            
-            
+
         }
     }
 

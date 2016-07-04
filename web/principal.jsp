@@ -13,6 +13,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Celulares - Evaluacion final</title>
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
+        <%  
+            
+        %>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">

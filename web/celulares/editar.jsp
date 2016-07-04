@@ -14,6 +14,7 @@
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
         <script type="text/javascript" src="../template/calendar/tcal.js"></script>
+        
     </head>
     <body>
         <%
@@ -55,17 +56,17 @@
                     </select>
                     <label for="exampleInputName2">Modelo</label>
                     <select class="form-control" name="modelo" id="modelo" >
-                        <option value="<% //out.println(con.getResult().getString("modelo_id")); %>">Elija una opcion...</option>
-                        <% }%>
+                        <option value="<% %>">Elija una opcion...</option>
+                        
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <label>creado por:</label>
-                    <input type="text" class="form-control" readonly value="<%out.println(con.getResult().getString("numero")); %>">
+                    <input type="text" class="form-control" readonly value="<%out.println(con.getResult().getString("creado_por")); %>">
                 </div>    
                 <br>
                 <input type="submit" class=" btn btn-success pull-right" name="editar" value="Editar">
-                
+                <% }%>
             </form>          
         </div><!--container -->
         

@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Celulares - Evaluacion final</title>
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -86,6 +87,7 @@
                 </tbody>
 
             </table>      
+            <a class="btn btn-success pull-right" href="/Prueba_final/ususarios/usuario_reporte.jsp">Generar reporte</a>
         </div>
 
     </body>

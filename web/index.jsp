@@ -11,15 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Celulares - Evaluacion final</title>
         <link href="/Prueba_final/template/css/bootstrap.min.css" rel="stylesheet">
-       
-        <% /*HttpSession logeado = request.getSession(true);
-            String result = (String) logeado.getAttribute("valido");
-            if (result.equals("true") & result != null) {
-            } else {
-                response.sendRedirect("index.jsp");
-            }*/
-        %>
-
+        
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -53,9 +46,9 @@
                         <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
                         <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
                     </div>
-                     <br><br>
-                    
-                      <br><br>
+                    <br><br>
+
+                    <br><br>
                     <button type="submit" class="btn btn-default">Log In</button>
                 </form>
             </div>

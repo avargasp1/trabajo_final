@@ -31,7 +31,7 @@
                         <li><a href="/Prueba_final/Sistemas_operativos/index.jsp">Sistemas Operativos</a></li>
                         <li><a href="/Prueba_final/lenguajes_programacion/index.jsp">Lenguajes de Programacion</a></li>
                         <li><a href="/Prueba_final/index.jsp" class="pull-right">Log Out</a></li>
-                        
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -42,48 +42,49 @@
             <a class="btn btn-success" href="/Prueba_final/marcas/crear.jsp" role="button">Crear Marca</a>
             <div class="pull-right">
                 <form method="post">
-                  <input type="text" name="buscar">
-                <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
-                <%
-                Conexion con = new Conexion();
-                
-                if (request.getParameter("buscar") != null) {
-                    if (request.getParameter("buscar").isEmpty()) {
+                    <input type="text" name="buscar">
+                    <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
+                    <%
+                        Conexion con = new Conexion();
 
-                        con.setConsulta("select * from marcas where estado='activo'");
-                    } else {
-                        String nombre = request.getParameter("buscar");
-                        con.setConsulta("select * from marcas where nombre like '%" + nombre + "%' and estado='activo'");
-                    }
-                } else {
-                    con.setConsulta("select * from marcas where estado='activo'");
-                }
-            %>  
+                        if (request.getParameter("buscar") != null) {
+                            if (request.getParameter("buscar").isEmpty()) {
+
+                                con.setConsulta("select * from marcas where estado='activo'");
+                            } else {
+                                String nombre = request.getParameter("buscar");
+                                con.setConsulta("select * from marcas where nombre like '%" + nombre + "%' and estado='activo'");
+                            }
+                        } else {
+                            con.setConsulta("select * from marcas where estado='activo'");
+                        }
+                    %>  
                 </form>
-                
+
             </div>
             <br>
             <table class="table table-striped">
                 <thead>
-                    <th>ID</th>
-                    <th>Nombre</th>
+                <th>ID</th>
+                <th>Nombre</th>
 
                 </thead>
                 <tbody>
                     <%
-                       while (con.getResult().next()){
+                        while (con.getResult().next()) {
                             out.println("<tr>");
-                            out.println("<td>"+con.getResult().getString("marca_id")+"</td>");
-                            out.println("<td>"+con.getResult().getString("nombre")+"</td>");
+                            out.println("<td>" + con.getResult().getString("marca_id") + "</td>");
+                            out.println("<td>" + con.getResult().getString("nombre") + "</td>");
                             out.println("<td>" + "<a href='/Prueba_final/marcas/editar.jsp?marca_id=" + con.getResult().getString("marca_id") + "'>Editar</a>" + "</td>");
-                            out.println("<td>" + "<a href='/Prueba_final/MarcaServ?eliminar="+con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
+                            out.println("<td>" + "<a href='/Prueba_final/MarcaServ?eliminar=" + con.getResult().getString("marca_id") + "'>Eliminar</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>
-                    
+
                 </tbody>
 
-            </table>      
+            </table>  
+            <a class="btn btn-success pull-right" href="/Prueba_final/marcas/marca_reporte.jsp">Generar reporte</a>
         </div>
 
     </body>
