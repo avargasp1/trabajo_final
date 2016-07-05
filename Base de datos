@@ -49,7 +49,7 @@ CREATE TABLE `sistemas_operativos` (
   KEY `lenguaje_id` (`lenguaje_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `Usuarios` (
+CREATE TABLE `usuarios` (
   `usuario_id` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(25) DEFAULT NULL,
   `clave` varchar(25) DEFAULT NULL,
